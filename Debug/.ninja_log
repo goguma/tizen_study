@@ -1,0 +1,14 @@
+# ninja log v5
+0	1751	0	src/threadtest.o	fe8cedc5ffa340aa
+1754	2809	0	threadtest	e2c54a9499c9f2a5
+2	929	0	src/threadtest.o	d59053652f83081b
+931	1612	0	threadtest	2e6efdb78cbed6bc
+22	633	0	threadtest	2e6efdb78cbed6bc
+3	1033	0	src/networktest.o	310636ae366a431d
+2	742	0	src/threadtest.o	d59053652f83081b
+743	1519	0	threadtest	f48140fde8e12279
+14	770	0	src/threadtest.o	d59053652f83081b
+10	792	0	src/networktest.o	310636ae366a431d
+792	1354	0	threadtest	f48140fde8e12279
+0	12	0	clean_sa	4c96bf98c7d9ab47
+12	25	0	clean	d59b6dac04fa9b5d
