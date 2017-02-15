@@ -35,6 +35,13 @@ _set_label_text_network_update(void *data)
 	return NULL;
 }
 
+void *
+_enable_wifi_setting_button(void *data)
+{
+	/*Append A button and enable it to can click*/
+	/*Let's try to use edc*/
+}
+
 static void
 create_base_gui(appdata_s *ad)
 {

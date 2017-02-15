@@ -30,6 +30,13 @@ _check_network_connection(appdata_s *ad)
 		ad->network.network_connected = EINA_TRUE;
 		ad->network.network = net_state;
 	}
+	else if (error_code == CONNECTION_ERROR_NO_CONNECTION)
+	{
+		/* How to do?*/
+		dlog_print(DLOG_INFO, LOG_TAG, "Network connection type: %d", net_state);
+		ad->network.network_connected = EINA_FALSE;
+		ad->network.network = net_state;
+	}
 
 	return EINA_TRUE;
 }
@@ -44,6 +51,10 @@ _initialize_network(void *data, Ecore_Thread *thread)
 		/*try to connect network*/
 		_check_network_connection(ad);
 	}
+	/*
+	 * FIXME : change _set_label_text_network_update() to _update_network_gui()
+	 * _update_network_gui() will be call _set_label_text_network_update() and _enable_wifi_setting_button() etc..
+	 */
 	ecore_main_loop_thread_safe_call_async(_set_label_text_network_update, data);
 
 }
