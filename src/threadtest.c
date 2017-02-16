@@ -1,3 +1,4 @@
+#include "app_main.h"
 #include "threadtest.h"
 #include "networktest.h"
 
@@ -40,6 +41,8 @@ _enable_wifi_setting_button(void *data)
 {
 	/*Append A button and enable it to can click*/
 	/*Let's try to use edc*/
+
+	return NULL;
 }
 
 static void
@@ -172,7 +175,8 @@ ui_app_low_memory(app_event_info_h event_info, void *user_data)
 int
 main(int argc, char *argv[])
 {
-	appdata_s ad = {0,};
+#if 1
+	appdata_s ad = { 0, };
 	int ret = 0;
 
 	ui_app_lifecycle_callback_s event_callback = {0,};
@@ -196,4 +200,15 @@ main(int argc, char *argv[])
 	}
 
 	return ret;
+#else
+	int result = 0;
+	app_data *app = uib_app_create();
+	if (app)
+	{
+		result = uib_app_run(app, argc, argv);
+		uib_app_destroy(app);
+	}
+
+	return result;
+#endif
 }
