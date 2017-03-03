@@ -2,6 +2,7 @@
 <properties>
     <shape>square</shape>
     <storyboard>
-        <view id="view1" location_x="475" location_y="10"/>
+        <view id="data_result" location_x="475" location_y="10"/>
+        <view id="view2" location_x="1055" location_y="10"/>
     </storyboard>
 </properties>

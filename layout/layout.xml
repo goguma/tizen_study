@@ -1,9 +1,91 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document>
-    <mscreen>
-        <configuration device="HD" id="config1" name="common" orientation="portrait" type="common"/>
-    </mscreen>
-    <views startup="view1">
-        <view id="view1" indicator="true" screen_orientation="full_sensor" type="view"/>
-    </views>
+	<mscreen>
+		<configuration device="HD" id="config1" name="common"
+			orientation="portrait" type="common" />
+		<configuration orientation="portrait" name="wvga"
+			id="configuration1" type="specific" device="WVGA" />
+	</mscreen>
+	<views startup="view1">
+		<view id="view1" indicator="true" screen_orientation="full_sensor"
+			type="view">
+			<grid align_h="fill" vsize_w="1000" align_v="fill" visible="true"
+				weight_v="1" id="grid1" weight_h="1" vsize_h="1000">
+				<button align_v="fill" visible="true" weight_v="1" pack_h="48"
+					weight_h="1" align_h="fill" pack_w="208" disable="false" pack_x="376"
+					pack_y="831" style="default" id="button1" text="Next">
+					<variation config_ref="configuration1" visible="true"
+						pack_w="652" pack_x="174" pack_h="82" pack_y="860" />
+					<event connection_wrapper="connection_view1_button1_onclicked"
+						function_name="view1_button1_onclicked" signal="clicked" target="view2" />
+				</button>
+				<label align_v="fill" visible="false" weight_v="1" line_wrap="none"
+					pack_h="41" weight_h="1" ellipsis="true" align_h="fill" wrap_width="0"
+					pack_w="210" pack_x="102" pack_y="61" id="label1" text="Network Status">
+					<variation config_ref="configuration1" visible="true"
+						pack_w="427" pack_x="102" pack_h="63" pack_y="61" />
+				</label>
+				<label align_v="fill" visible="false" weight_v="1" line_wrap="none"
+					pack_h="41" weight_h="1" ellipsis="true" align_h="fill" wrap_width="0"
+					pack_w="210" pack_x="175" pack_y="139" id="label2" text="WiFi : ">
+					<variation config_ref="configuration1" visible="true"
+						pack_w="152" pack_x="175" pack_h="49" pack_y="139" />
+				</label>
+				<label config_ref="configuration1" align_v="fill" visible="true"
+					weight_v="1" line_wrap="none" pack_h="49" weight_h="1" ellipsis="true"
+					align_h="fill" wrap_width="0" pack_w="150" pack_x="175" pack_y="207"
+					id="label3" text="Data Network : ">
+					<variation config_ref="configuration1" visible="true"
+						pack_w="379" pack_x="175" pack_h="49" pack_y="207" />
+				</label>
+				<label config_ref="configuration1" align_v="fill" visible="true"
+					weight_v="1" line_wrap="none" pack_h="49" weight_h="1" ellipsis="true"
+					align_h="fill" wrap_width="0" pack_w="150" pack_x="175" pack_y="207"
+					id="wifi_result" text="Unknown">
+					<variation config_ref="configuration1" visible="true"
+						pack_w="252" pack_x="321" pack_h="49" pack_y="139" />
+				</label>
+				<label config_ref="configuration1" align_v="fill" visible="true"
+					weight_v="1" line_wrap="none" pack_h="49" weight_h="1" ellipsis="true"
+					align_h="fill" wrap_width="0" pack_w="252" pack_x="321" pack_y="207"
+					id="data_result" text="Unknown">
+					<variation config_ref="configuration1" visible="true"
+						pack_w="252" pack_x="525" pack_h="49" pack_y="207" />
+				</label>
+				<button config_ref="configuration1" align_v="fill" visible="true"
+					weight_v="1" pack_h="82" weight_h="1" align_h="fill" pack_w="652"
+					disable="false" pack_x="0" pack_y="0" style="default" id="button2"
+					text="WiFi Setting">
+					<variation config_ref="configuration1" visible="true"
+						pack_w="652" pack_x="171" pack_h="82" pack_y="283" />
+				</button>
+				<button config_ref="configuration1" align_v="fill" visible="true"
+					weight_v="1" pack_h="83" weight_h="1" align_h="fill" pack_w="652"
+					disable="false" pack_x="171" pack_y="352" style="default" id="button3"
+					text="Update Status">
+					<variation config_ref="configuration1" visible="true"
+						pack_w="652" pack_x="171" pack_h="83" pack_y="379" />
+				</button>
+			</grid>
+			<event function_name="view1_onuib_view_create" signal="uib,view,create" />
+			<event function_name="view1_onuib_view_destroy" signal="uib,view,destroy" />
+		</view>
+		<view indicator="true" screen_orientation="full_sensor" id="view2"
+			type="view">
+			<grid align_h="fill" vsize_w="1000" align_v="fill" visible="false"
+				weight_v="1" id="grid2" weight_h="1" vsize_h="1000">
+				<variation config_ref="configuration1" visible="true" />
+				<button align_v="fill" visible="false" weight_v="1" pack_h="80"
+					weight_h="1" align_h="fill" pack_w="313" disable="false" pack_x="246"
+					pack_y="863" style="default" id="button4" text="Back">
+					<variation config_ref="configuration1" visible="true"
+						pack_w="652" pack_x="174" pack_h="82" pack_y="860" />
+					<event connection_wrapper="connection_view2_button4_onclicked"
+						function_name="view2_button4_onclicked" signal="clicked" target="view1" />
+				</button>
+			</grid>
+			<event function_name="view2_onuib_view_create" signal="uib,view,create" />
+			<event function_name="view2_onuib_view_destroy" signal="uib,view,destroy" />
+		</view>
+	</views>
 </document>
